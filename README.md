@@ -85,3 +85,59 @@ It provides dataset profiling, deterministic chart recommendations, a configurab
        Local Metadata     Dataset Storage    Optional MongoDB
        storage/           storage/datasets/  Metadata
        metadata.json
+
+
+# PROJECT STRUCTURE
+
+DataRefinery/
+│
+├── backend/
+│   ├── app/
+│   │   └── ...
+│   ├── requirements.txt
+│   └── ...
+│
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── ...
+│   └── ...
+│
+├── public/
+│
+├── storage/
+│   ├── datasets/
+│   └── metadata.json
+│
+├── package.json
+├── vite.config.*
+├── README.md
+└── ...
+
+# How It Works
+
+Upload Dataset
+      │
+      ▼
+Parse Dataset
+      │
+      ▼
+Profile Dataset
+      │
+      ├───────────────┐
+      │               │
+      ▼               ▼
+Data Quality      Chart Recommendations
+      │               │
+      ▼               ▼
+Cleaning          Visualization
+      │               │
+      └───────┬───────┘
+              ▼
+       Explore / Query
+              │
+              ▼
+          Dashboard
+              │
+              ▼
+            Export
