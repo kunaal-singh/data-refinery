@@ -1,0 +1,17 @@
+date,region,product,revenue,orders
+2025-01-05,West,Studio chair,1240,18
+2025-01-12,East,Task lamp,860,14
+2025-01-19,North,Studio chair,1560,23
+2025-01-26,South,Desk shelf,940,16
+2025-02-02,West,Task lamp,1120,19
+2025-02-09,East,Desk shelf,1310,21
+2025-02-16,North,Task lamp,780,12
+2025-02-23,South,Studio chair,1680,25
+2025-03-02,West,Desk shelf,1430,24
+2025-03-09,East,Studio chair,1890,29
+2025-03-16,North,Desk shelf,1050,17
+2025-03-23,South,Task lamp,1280,20
+2025-04-01,West,Studio chair,1760,27
+2025-04-08,East,Desk shelf,990,15
+2025-04-15,North,Studio chair,2010,31
+2025-04-22,South,Desk shelf,1150,18

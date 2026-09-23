@@ -1,0 +1,9 @@
+sku,category,warehouse,stock,reorder_point,unit_cost
+A-101,Seating,West,42,18,84.5
+A-102,Lighting,East,12,20,32
+A-103,Storage,North,86,25,44
+A-104,Seating,South,9,16,115
+A-105,Lighting,West,54,22,28.5
+A-106,Storage,East,31,14,67
+A-107,Seating,North,18,20,92
+A-108,Lighting,South,73,19,41

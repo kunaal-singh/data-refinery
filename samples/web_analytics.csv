@@ -1,0 +1,9 @@
+date,source,device,sessions,conversions
+2025-01-01,Search,Desktop,1240,84
+2025-01-08,Social,Mobile,1820,61
+2025-01-15,Direct,Desktop,940,73
+2025-01-22,Email,Mobile,760,58
+2025-02-01,Search,Mobile,1560,102
+2025-02-08,Social,Desktop,1120,49
+2025-02-15,Direct,Mobile,1380,93
+2025-02-22,Email,Desktop,820,67
