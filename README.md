@@ -64,8 +64,6 @@ The frontend owns the interactive workspace and can analyze a selected file in t
 
 
 
-    Runtime responsibilities
-
 - **Browser:** Reads the selected file, builds the interactive workspace, profiles the loaded rows, renders charts, and handles browser-side CSV/XLSX and chart/report downloads. Browser analysis is available even when the API is stopped.
 - **Vite:** Serves the React app in development and proxies `/api` requests to `http://127.0.0.1:8000`.
 - **FastAPI:** Accepts optional local copies of datasets; supports saved charts and dashboard settings, paginated exploration, quality and insight endpoints, structured queries, cleaning records, and server-side exports.
