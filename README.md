@@ -56,6 +56,47 @@ Package versions are recorded in package.json and backend/requirements.txt.
 
 The browser performs analysis on the loaded dataset. The API is an optional local service used for saved dataset copies, persistent chart/dashboard configuration, paginated API exploration, and server-side exports.
 
+## Architecture
+
+The frontend owns the interactive workspace and can analyze a selected file in the browser. The optional FastAPI backend provides durable local dataset storage and API-backed features. Vite forwards development requests under `/api` to the backend.
+
+flowchart TB
+    person[User] --> ui[React + Vite UI<br/>JavaScript]
+    file[CSV / TSV / Excel / JSON] --> parser[Browser parsing and profiling<br/>Papa Parse · ExcelJS]
+    ui --> parser
+    samples[Bundled sample CSVs] --> parser
+    parser --> analysis[Charts · quality · insights<br/>explorer · structured queries]
+    analysis --> ui
+    ui -->|Optional /api requests| api[FastAPI service]
+    vite[Vite dev server] -->|Proxies /api| api
+    api --> engine[Python analysis engine<br/>pandas · NumPy]
+    engine --> files[Local dataset files<br/>original + processed Parquet]
+    api --> metadata[Metadata store]
+    metadata --> json[Local JSON, default]
+    metadata --> mongo[MongoDB, optional]
+    files --> api
+    analysis --> exports[Browser exports<br/>CSV · XLSX · PNG · SVG · PDF]
+    api --> exportsApi[API exports<br/>CSV · XLSX · Parquet]
+
+
+    Runtime responsibilities
+
+- **Browser:** Reads the selected file, builds the interactive workspace, profiles the loaded rows, renders charts, and handles browser-side CSV/XLSX and chart/report downloads. Browser analysis is available even when the API is stopped.
+- **Vite:** Serves the React app in development and proxies `/api` requests to `http://127.0.0.1:8000`.
+- **FastAPI:** Accepts optional local copies of datasets; supports saved charts and dashboard settings, paginated exploration, quality and insight endpoints, structured queries, cleaning records, and server-side exports.
+- **Dataset storage:** The API stores source files and processed Parquet data under the configured storage directory, `storage/` by default.
+- **Metadata store:** Uses a local JSON file by default. If MongoDB is configured and reachable when the API starts, metadata is stored in MongoDB instead. Dataset files stay in local filesystem storage.
+
+### Data flow
+
+1. A file is parsed and analyzed in the browser, or a bundled sample is loaded.
+2. The browser creates the profile, quality findings, chart recommendations, and workspace views from the loaded records.
+3. When the API is available, the frontend may send a copy of an uploaded file and supported changes to the local FastAPI service for persistence.
+4. The API stores file data locally and metadata in its configured metadata store; later API requests read or update those records.
+5. Charts and tables render in the browser. Downloads are produced by the browser or by the API depending on the export type.
+
+Browser-side analysis is independent of MongoDB. MongoDB is only an optional metadata backend for the API.
+
 ## Project layout
 
 ~~~text
