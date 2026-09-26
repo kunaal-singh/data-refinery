@@ -60,23 +60,7 @@ The browser performs analysis on the loaded dataset. The API is an optional loca
 
 The frontend owns the interactive workspace and can analyze a selected file in the browser. The optional FastAPI backend provides durable local dataset storage and API-backed features. Vite forwards development requests under `/api` to the backend.
 
-flowchart TB
-    person[User] --> ui[React + Vite UI<br/>JavaScript]
-    file[CSV / TSV / Excel / JSON] --> parser[Browser parsing and profiling<br/>Papa Parse · ExcelJS]
-    ui --> parser
-    samples[Bundled sample CSVs] --> parser
-    parser --> analysis[Charts · quality · insights<br/>explorer · structured queries]
-    analysis --> ui
-    ui -->|Optional /api requests| api[FastAPI service]
-    vite[Vite dev server] -->|Proxies /api| api
-    api --> engine[Python analysis engine<br/>pandas · NumPy]
-    engine --> files[Local dataset files<br/>original + processed Parquet]
-    api --> metadata[Metadata store]
-    metadata --> json[Local JSON, default]
-    metadata --> mongo[MongoDB, optional]
-    files --> api
-    analysis --> exports[Browser exports<br/>CSV · XLSX · PNG · SVG · PDF]
-    api --> exportsApi[API exports<br/>CSV · XLSX · Parquet]
+<img width="618" height="333" alt="image" src="https://github.com/user-attachments/assets/ad6950bb-0d83-4415-a3d8-285c4266c2b8" />
 
 
     Runtime responsibilities
