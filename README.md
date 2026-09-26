@@ -60,7 +60,8 @@ The browser performs analysis on the loaded dataset. The API is an optional loca
 
 The frontend owns the interactive workspace and can analyze a selected file in the browser. The optional FastAPI backend provides durable local dataset storage and API-backed features. Vite forwards development requests under `/api` to the backend.
 
-<img width="618" height="333" alt="image" src="https://github.com/user-attachments/assets/ad6950bb-0d83-4415-a3d8-285c4266c2b8" />
+<img width="1800" height="1210" alt="ChatGPT Image Sep 26, 2026, 01_44_08 PM" src="https://github.com/user-attachments/assets/22870843-98d2-4e11-bdae-9be5638cda22" />
+
 
 
     Runtime responsibilities
