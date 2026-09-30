@@ -8,7 +8,7 @@ It provides dataset profiling, deterministic chart recommendations, a configurab
 
 ---
 
-## 🚀 Features
+##  Features
 
 - 📂 Import CSV, TSV, Excel, and JSON files
 - 📊 Automatic dataset profiling
@@ -30,7 +30,7 @@ It provides dataset profiling, deterministic chart recommendations, a configurab
 
 ---
 
-# 🧰 Tech Stack
+#  Tech Stack
 
 ## Frontend
 
@@ -63,7 +63,7 @@ It provides dataset profiling, deterministic chart recommendations, a configurab
 
 ---
 
-# 🏗️ Architecture
+#  Architecture
 
 ```text
                     ┌───────────────────────┐
