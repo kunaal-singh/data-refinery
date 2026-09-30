@@ -1,3 +1,7 @@
+
+<img width="577" height="135" alt="image" src="https://github.com/user-attachments/assets/362424ed-043f-4f66-94e3-0f65b983f562" />
+
+
 # DataRefinery
 
 > A local-first data analysis and visualization workspace for exploring, profiling, cleaning, querying, and visualizing CSV, Excel, and JSON datasets.
